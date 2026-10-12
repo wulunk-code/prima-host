@@ -1,0 +1,1308 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ $setting->store_name ?? 'Prima House' }}</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f5f5}
+
+.navbar{
+    background:linear-gradient(
+        135deg,
+        #00b140,
+        #00d757
+    );
+    padding:12px;
+    box-shadow:0 4px 20px rgba(0,177,64,.3);
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:65px;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -3px 15px rgba(0,0,0,.1);
+    z-index:9999;
+}
+
+.bottom-nav a{
+    color:#00b140;
+    text-decoration:none;
+    font-size:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+}
+
+.bottom-nav i{
+    font-size:22px;
+}
+
+
+body{
+    background:#f5f5f5;
+    padding-bottom:90px;
+}
+
+.header-row{display:flex;align-items:center;gap:10px}
+.logo-mini{display:flex;align-items:center;gap:8px}
+.logo-mini img{
+width:42px;height:42px;border-radius:8px;background:#fff;
+padding:2px;object-fit:contain
+}
+.logo-name{color:#fff;font-weight:bold;font-size:14px}
+.logo-tagline{color:#eaffea;font-size:11px}
+.search-box{
+flex:1;background:#fff;border-radius:30px;padding:10px 15px
+}
+.search-box input{border:none;outline:none;width:100%}
+.cart-btn{color:#fff;font-size:24px;text-decoration:none;position:relative}
+.cart-badge{
+position:absolute;top:-8px;right:-10px;background:red;color:#fff;
+min-width:18px;height:18px;border-radius:50%;display:flex;
+align-items:center;justify-content:center;font-size:11px
+}
+.container{max-width:1200px;margin:auto;padding:10px}
+
+.welcome-text{
+    position:relative;
+    overflow:hidden;
+    margin:10px 0;
+    border-radius:30px;
+    background:linear-gradient(135deg,#00b140,#00d757);
+    box-shadow:0 5px 15px rgba(0,177,64,.25);
+    height:50px;
+    display:flex;
+    align-items:center;
+}
+
+.speaker-icon{
+    width:38px;
+    height:38px;
+    margin-left:10px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    z-index:2;
+}
+
+.running-text{
+    flex:1;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.running-text span{
+    display:inline-block;
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    padding-left:100%;
+    animation:marquee 18s linear infinite;
+}
+
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+
+
+
+.slider-wrapper{
+    position:relative;
+    overflow:hidden;
+    margin-bottom:15px;
+
+    width:100%;
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+}
+
+
+.slides{display:flex;transition:transform .5s ease}
+.slide{min-width:100%}
+
+
+.slide img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+}
+
+
+.dots{
+position:absolute;bottom:10px;left:50%;
+transform:translateX(-50%);display:flex;gap:5px
+}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5)}
+.dot.active{background:#fff}
+.menu-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:10px;margin:15px 0
+}
+
+
+.menu-item{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.menu-item i{
+    font-size:28px;
+    color:#00b140;
+    margin-bottom:8px;
+}
+
+.menu-item span{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+}
+
+.menu-item span{
+    color:#333;
+    text-decoration:none;
+}
+
+
+.menu-item:hover{
+transform:translateY(-3px);
+}
+
+.menu-item{
+text-decoration:none;
+color:#222;
+}
+
+
+.menu-card{
+display:block;
+background:#00b140;
+color:#fff;
+padding:12px;
+text-align:center;
+border-radius:10px;
+margin:15px 0;
+text-decoration:none;
+font-weight:bold;
+}
+
+.menu-card{
+    display:block;
+    background:#00b140;
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:12px;
+    margin:15px 0;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.menu-card:hover{
+    background:#009933;
+}
+
+
+.section-title{
+font-size:22px;
+font-weight:700;
+color:#00b140;
+margin:20px 0 12px;
+padding-left:10px;
+border-left:5px solid #00b140;
+}
+
+.event-card{
+    background:#fff;
+    border-left:5px solid #00b140;
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.product-grid{
+display:grid;grid-template-columns:repeat(2,1fr);gap:12px
+}
+
+
+.product-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.product-card:hover{
+    transform:translateY(-3px);
+}
+.product-image{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+}
+.product-body{
+    padding:12px;
+}
+
+.product-name{
+    font-size:13px;
+    font-weight:600;
+    min-height:36px;
+}
+
+.product-price{
+    color:#ff6f00;
+    font-size:26px;
+    font-weight:800;
+    margin-top:8px;
+}
+
+.product-stock{font-size:12px;color:#777;margin-top:5px}
+.badge-new,
+.badge-favorite,
+.discount-badge{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+
+.product-stock{
+    color:#666;
+    font-size:11px;
+}
+
+.stock-low{
+    color:#ff5722;
+    font-weight:bold;
+}
+
+
+.badge-new{
+    background:#ff5722;
+}
+
+.badge-favorite{
+    background:#ff9800;
+}
+
+.discount-badge{
+    background:#f44336;
+}
+
+
+.btn-detail,.btn-disabled{
+display:block;width:100%;text-align:center;padding:10px;
+border-radius:8px;margin-top:10px;font-weight:bold;text-decoration:none
+}
+
+.btn-detail{
+    background:linear-gradient(
+        135deg,
+        #00b140,
+        #00d757
+    );
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-3px);
+}
+
+.product-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    background:#f3f3f3;
+}
+
+.product-body{
+    padding:10px;
+}
+
+.product-name{
+    min-height:40px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.product-price{
+    color:#ff6f00;
+    font-size:28px;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+
+
+
+.footer{
+background:#fff;
+padding:20px;
+text-align:center;
+margin-top:25px;
+color:#666;
+font-size:13px;
+border-top:1px solid #eee;
+}
+
+
+.wa-float{
+    position:fixed;
+    right:15px;
+    bottom:90px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    z-index:999;
+    box-shadow:0 8px 25px rgba(37,211,102,.4);
+}
+
+
+@media(max-width:768px){
+
+.slide img{
+    height:130px;
+    object-fit:cover;
+}
+
+}
+
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin:15px 0;
+}
+
+.stat-box{
+background:#fff;
+padding:15px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.stat-box i{
+font-size:22px;
+color:#00b140;
+margin-bottom:5px;
+}
+
+.stat-box h3{
+color:#00b140;
+font-size:22px;
+margin:0;
+}
+
+.stat-box span{
+font-size:12px;
+color:#666;
+}
+
+
+
+.stat-card h3{
+    color:#00b140;
+    font-size:20px;
+}
+
+.stat-card span{
+    font-size:12px;
+    color:#666;
+}
+
+
+.discount-badge{
+position:absolute;
+top:8px;
+right:8px;
+background:#ff3b30;
+color:#fff;
+padding:4px 8px;
+border-radius:20px;
+font-size:10px;
+font-weight:bold;
+z-index:20;
+}
+
+
+.product-card{
+    transition:.3s;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:relative;
+}
+
+
+
+.discount-badge{
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:#ff0000;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.badge-favorite{
+position:absolute;
+top:8px;
+left:8px;
+background:#ff6600;
+color:#fff;
+font-size:10px;
+padding:4px 8px;
+border-radius:20px;
+font-weight:bold;
+}
+
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    padding:10px 0;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+    z-index:999;
+}
+
+.bottom-nav a{
+    text-decoration:none;
+    color:#00b140;
+    font-size:12px;
+    text-align:center;
+}
+
+.bottom-nav i{
+    display:block;
+    font-size:20px;
+    margin-bottom:3px;
+}
+
+.bottom-nav a.active{
+    color:#00b140;
+    font-weight:bold;
+}
+
+.bottom-nav a.active i{
+    transform:scale(1.15);
+}
+
+body{
+    padding-bottom:70px;
+}
+
+.cart-badge{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    background:#ff3b30;
+    color:#fff;
+    min-width:18px;
+    height:18px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.product-image{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.product-body{
+    padding:10px;
+}
+
+.product-name{
+    font-size:14px;
+    font-weight:600;
+    min-height:40px;
+}
+
+.product-price{
+    font-size:24px;
+    color:#ff6f00;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.product-stock{
+    font-size:12px;
+    color:#777;
+    margin-top:5px;
+}
+
+.btn-detail{
+    display:block;
+    margin-top:10px;
+    background:#00b140;
+    color:#fff;
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.btn-disabled{
+    width:100%;
+    margin-top:10px;
+    background:#ccc;
+    border:none;
+    padding:10px;
+    border-radius:8px;
+}
+
+
+.sold-out{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:#444;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+    z-index:20;
+}
+
+.badge-new{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:#ff5722;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    z-index:20;
+}
+
+.badge-new{
+    position:absolute;
+    top:8px;
+    left:8px;
+    z-index:99;
+    background:#ff5722;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.product-card{
+    position:relative;
+    overflow:hidden;
+}
+
+
+
+
+
+/* PRIMA MOBILE FIX START */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.product-card {
+    min-width: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.product-body {
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 36px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ff6f00;
+}
+
+.btn-detail {
+    display: block;
+    background: #00b140;
+    color: #fff;
+    text-align: center;
+    padding: 11px 5px;
+    border-radius: 9px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+@media (min-width: 769px) {
+    .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* PRIMA MOBILE FIX END */
+
+
+
+
+/* PRIMA GRID FINAL START */
+
+.product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.product-card {
+    min-width: 0 !important;
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+/* HP */
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .product-image {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .product-body {
+        padding: 10px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+}
+
+/* PRIMA GRID FINAL END */
+/* PRIMA HOST V4.4 */
+.prima-v44-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    margin-top:10px;
+}
+.prima-v44-actions .btn-detail{
+    grid-column:1/-1;
+    margin-top:0;
+}
+.prima-v44-cart{
+    display:block;
+    background:#ff6f00;
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    border-radius:9px;
+    padding:10px 5px;
+    font-size:12px;
+    font-weight:bold;
+}
+.prima-v44-favorite{
+    background:#fff0f2;
+    color:#e91e63;
+    border:1px solid #ffc2d1;
+    border-radius:9px;
+    padding:10px 5px;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.prima-v44-favorite.active{
+    background:#e91e63;
+    color:#fff;
+}
+.prima-v44-disabled{
+    background:#ddd;
+    color:#777;
+    border:0;
+    border-radius:9px;
+    padding:10px 5px;
+}
+@media(max-width:768px){
+    .prima-v44-actions{gap:5px}
+    .prima-v44-cart,
+    .prima-v44-favorite{
+        font-size:11px;
+        padding:9px 3px;
+    }
+}
+</style>
+
+
+
+<link rel="stylesheet" href="{{ asset('css/prima-marketplace-v2.css') }}?v=2">
+<link rel="stylesheet" href="{{ asset('css/prima-marketplace-v4.css') }}?v=4">
+</head>
+<body>
+
+<div class="navbar">
+<div class="header-row">
+
+<div class="logo-mini">
+@if(!empty($setting->store_logo))
+<img src="{{ asset($setting->store_logo) }}">
+@endif
+<div>
+<div class="logo-name">{{ $setting->store_name ?? 'Prima House' }}</div>
+<div class="logo-tagline">Belanja Mudah & Cepat</div>
+</div>
+</div>
+
+<form action="{{ url('/') }}" method="GET" class="search-box">
+<input type="text" name="search" value="{{ request('search') }}" placeholder="Cari produk...">
+</form>
+
+<a href="{{ url('/cart') }}" class="cart-btn">
+<i class="fas fa-shopping-cart"></i>
+@if(session('cart'))
+<span class="cart-badge">{{ count(session('cart')) }}</span>
+@endif
+</a>
+
+</div>
+</div>
+
+<div class="container">
+
+
+<div class="welcome-text">
+
+    <div class="speaker-icon">
+        <i class="fas fa-bullhorn"></i>
+    </div>
+
+    <div class="running-text">
+        <span>
+            🎉 Selamat Datang di Prima House • Solusi Nutrisi & Gaya Hidup Sehat • 
+            🛍️ Promo Menarik Setiap Hari • 
+            🚚 Gratis Ongkir Radius Tertentu • 
+            💚 Terima Kasih Telah Berbelanja di Prima House
+        </span>
+    </div>
+
+</div>
+
+
+
+@if(isset($banners) && count($banners))
+<div class="slider-wrapper">
+<div class="slides">
+@foreach($banners as $banner)
+<div class="slide">
+<img src="{{ asset('uploads/'.$banner->image) }}" alt="{{ $banner->title }}">
+</div>
+@endforeach
+</div>
+<div class="dots">
+@foreach($banners as $banner)
+<span class="dot"></span>
+@endforeach
+</div>
+</div>
+@endif
+
+<div class="stats-grid">
+    <div class="stat-box">
+        <h3>{{ $products->count() }}</h3>
+        <span>Produk</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>{{ $events->count() }}</h3>
+        <span>Promo</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>{{ $totalMembers ?? 0 }}</h3>
+        <span>Member</span>
+    </div>
+</div>
+
+
+<div class="menu-grid">
+
+<a href="{{ url('/?category=herbal') }}" class="menu-item">
+<i class="fas fa-capsules"></i>
+<span>Herbal</span>
+</a>
+
+<a href="{{ url('/?category=minuman') }}" class="menu-item">
+<i class="fas fa-mug-hot"></i>
+<span>Minuman</span>
+</a>
+
+<a href="{{ url('/?category=makanan') }}" class="menu-item">
+<i class="fas fa-utensils"></i>
+<span>Makanan</span>
+</a>
+
+<a href="{{ url('/?category=promo') }}" class="menu-item">
+<i class="fas fa-gift"></i>
+<span>Promo</span>
+</a>
+
+</div>
+
+<h2 class="section-title">
+📢 Event & Promo
+</h2>
+
+@foreach($events as $event)
+<div class="event-card">
+<strong>{{ $event->title }}</strong><br><br>
+{{ $event->description }}
+</div>
+@endforeach
+
+<div class="event-card">
+    🎉 Selamat Datang Member Prima House
+    <br><br>
+    Nikmati promo dan produk pilihan setiap hari.
+</div>
+
+@if(request('category'))
+
+<div class="section-title">
+📂 Kategori : {{ ucfirst(request('category')) }}
+</div>
+
+@endif
+
+
+<h2 class="section-title">
+🔥 Produk Terlaris
+</h2>
+
+<div class="product-grid">
+@foreach(($topProducts ?? collect()) as $item)
+
+@if($item->product)
+
+<div class="product-card">
+
+<span class="badge-new">
+TERLARIS
+</span>
+
+
+<img
+src="{{ asset($item->product->image) }}"
+class="product-image"
+onerror="this.src='{{ asset('no-image.png') }}'">
+
+
+<div class="product-body">
+
+<div class="product-name">
+{{ $item->product->name }}
+</div>
+
+
+
+<div class="product-price">
+Rp {{ number_format($item->product->price,0,',','.') }}
+</div>
+
+<div class="product-stock">
+Terjual {{ $item->total_qty }}
+</div>
+
+</div>
+
+</div>
+
+@endif
+
+@endforeach
+
+</div>
+<h2 class="section-title">
+⭐ Produk Unggulan
+</h2>
+
+<div class="product-grid">
+
+@foreach($products->take(4) as $product)
+
+<div class="product-card">
+
+    @if($loop->iteration <= 2)
+    <span class="badge-new">
+        FAVORIT
+    </span>
+    @endif
+
+    <img src="{{ asset($product->image) }}"
+         class="product-image"
+         onerror="this.src='{{ asset('no-image.png') }}'">
+
+    <div class="product-body">
+
+        <div class="product-name">
+            {{ $product->name }}
+        </div>
+
+        <div class="product-price">
+            Rp {{ number_format($product->price,0,',','.') }}
+        </div>
+
+        <div class="prima-v44-actions">
+    <a href="{{ url('/product/'.$product->id) }}"
+       class="btn-detail">🔍 Lihat Detail</a>
+
+    @if($product->stock > 0)
+        <form action="{{ url('/cart/add/'.$product->id) }}" method="POST" class="prima-cart-form">
+    @csrf
+    <button type="submit" class="prima-v44-cart">
+        🛒 Keranjang
+    </button>
+</form>
+    @else
+        <button type="button" class="prima-v44-disabled" disabled>
+            Stok Habis
+        </button>
+    @endif
+
+    <button type="button"
+            class="prima-v44-favorite"
+            data-product="{{ $product->id }}">
+        ♡ Favorit
+    </button>
+</div>
+
+    </div>
+
+</div>
+
+@endforeach
+
+</div>
+
+
+
+
+<h2 class="section-title">
+🛍️ Produk Terbaru
+</h2>
+
+<div class="product-grid">
+
+@forelse($products as $product)
+
+<div class="product-card">
+
+    @if($product->stock <= 0)
+    <span class="sold-out">HABIS</span>
+    @endif
+
+    @if($loop->iteration <= 4)
+    <span class="badge-new">BARU</span>
+    @endif
+
+    <img
+    src="{{ asset($product->image) }}"
+    class="product-image"
+    alt="{{ $product->name }}"
+    onerror="this.src='{{ asset('no-image.png') }}'">
+
+    <div class="product-body">
+
+        <div class="product-name">
+            {{ $product->name }}
+        </div>
+
+        <div class="product-price">
+            Rp {{ number_format($product->price,0,',','.') }}
+        </div>
+
+        @if($product->stock <= 10 && $product->stock > 0)
+<div class="product-stock stock-low">
+    🔥 Stok Hampir Habis ({{ $product->stock }})
+</div>
+@else
+<div class="product-stock">
+    Stok : {{ $product->stock }}
+</div>
+@endif
+
+        @if($product->stock > 0)
+
+            <div class="prima-v44-actions">
+    <a href="{{ url('/product/'.$product->id) }}"
+       class="btn-detail">🔍 Lihat Detail</a>
+
+    @if($product->stock > 0)
+        <form action="{{ url('/cart/add/'.$product->id) }}" method="POST" class="prima-cart-form">
+    @csrf
+    <button type="submit" class="prima-v44-cart">
+        🛒 Keranjang
+    </button>
+</form>
+    @else
+        <button type="button" class="prima-v44-disabled" disabled>
+            Stok Habis
+        </button>
+    @endif
+
+    <button type="button"
+            class="prima-v44-favorite"
+            data-product="{{ $product->id }}">
+        ♡ Favorit
+    </button>
+</div>
+
+        @else
+
+            <button class="btn-disabled">
+                Stok Habis
+            </button>
+
+        @endif
+
+    </div>
+
+</div>
+
+@empty
+
+<p>Belum ada produk.</p>
+
+@endforelse
+</div>
+
+
+<a href="/riwayat" class="menu-card">
+📋 Riwayat Pesanan Saya
+</a>
+
+<div class="footer">
+
+<h3>{{ $setting->store_name }}</h3>
+
+<p>{{ $setting->store_address }}</p>
+
+<p>
+© {{ date('Y') }}
+{{ $setting->store_name }}
+</p>
+
+</div>
+
+
+
+
+<script>
+const slides=document.querySelector('.slides');
+const dots=document.querySelectorAll('.dot');
+if(slides){
+let index=0;
+const total=document.querySelectorAll('.slide').length;
+function updateSlide(){
+slides.style.transform=`translateX(-${index*100}%)`;
+dots.forEach(d=>d.classList.remove('active'));
+if(dots[index]) dots[index].classList.add('active');
+}
+updateSlide();
+setInterval(()=>{
+index=(index+1)%total;
+updateSlide();
+},3000);
+}
+</script>
+
+
+
+
+</div>
+
+
+
+@if(!empty($setting->store_phone))
+
+<a
+href="https://wa.me/{{ preg_replace('/[^0-9]/','',$setting->store_phone) }}"
+class="wa-float"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+@endif
+
+<div class="bottom-nav">
+
+<a href="/">
+<i class="fas fa-home"></i>
+<span>Home</span>
+</a>
+
+<a href="/cart">
+<i class="fas fa-shopping-cart"></i>
+<span>Cart</span>
+</a>
+
+<a href="/riwayat">
+<i class="fas fa-file-alt"></i>
+<span>Riwayat</span>
+</a>
+
+<a href="/admin">
+<i class="fas fa-user-cog"></i>
+<span>Admin</span>
+</a>
+
+</div>
+
+
+
+<script src="{{ asset('js/prima-marketplace-v4.js') }}?v=4" defer></script>
+<script>
+/* PRIMA FAVORIT V4.4 */
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.prima-v44-favorite').forEach(function(btn){
+        var key = 'prima_fav_' + btn.dataset.product;
+
+        function refresh(){
+            try {
+                var active = localStorage.getItem(key) === '1';
+                btn.classList.toggle('active', active);
+                btn.textContent = active ? '♥ Favorit' : '♡ Favorit';
+            } catch(e){}
+        }
+
+        refresh();
+
+        btn.addEventListener('click', function(){
+            try {
+                var active = localStorage.getItem(key) === '1';
+                localStorage.setItem(key, active ? '0' : '1');
+                refresh();
+            } catch(e){}
+        });
+    });
+});
+</script>
+</body>
+</html>

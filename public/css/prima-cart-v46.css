@@ -1,0 +1,30 @@
+
+.prima-cart-form{
+display:block;
+width:100%;
+margin:0;
+}
+
+.prima-cart-form .prima-v44-cart{
+width:100%;
+cursor:pointer;
+font-family:inherit;
+}
+
+.prima-cart-toast{
+position:fixed;
+top:85px;
+left:50%;
+transform:translateX(-50%);
+background:#00b140;
+color:white;
+padding:13px 20px;
+border-radius:12px;
+font-size:14px;
+font-weight:bold;
+z-index:999999;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+max-width:90%;
+text-align:center;
+}
+

@@ -1,0 +1,8 @@
+[21-Sep-2026 20:15:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/primahou/public_html/prima_host_v2/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/app/Providers/AppServiceProvider.php on line 7
+[21-Sep-2026 20:15:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/primahou/public_html/prima_host_v2/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/app/Providers/AppServiceProvider.php on line 7

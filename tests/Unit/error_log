@@ -1,0 +1,8 @@
+[21-Sep-2026 20:15:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/primahou/public_html/prima_host_v2/tests/Unit/ExampleTest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/tests/Unit/ExampleTest.php on line 7
+[21-Sep-2026 20:15:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/primahou/public_html/prima_host_v2/tests/Unit/ExampleTest.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/tests/Unit/ExampleTest.php on line 7

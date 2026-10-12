@@ -1,0 +1,8 @@
+[21-Sep-2026 20:14:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/primahou/public_html/prima_host_v2/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/tests/TestCase.php on line 7
+[21-Sep-2026 20:15:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/primahou/public_html/prima_host_v2/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/tests/TestCase.php on line 7

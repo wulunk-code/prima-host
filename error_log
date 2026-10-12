@@ -1,0 +1,8 @@
+[25-Sep-2026 11:04:13 Asia/Jakarta] PHP Parse error:  syntax error, unexpected identifier "Event", expecting "function" in app/Http/Controllers/EventController.php on line 48
+[11-Oct-2026 15:57:32 Asia/Jakarta] PHP Parse error:  syntax error, unexpected double-quoted string "'" in Command line code on line 6
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Undefined variable $product in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Attempt to read property "id" on null in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Undefined variable $product in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Attempt to read property "id" on null in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Undefined variable $product in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358
+[12-Oct-2026 08:54:26 Asia/Jakarta] PHP Warning:  Attempt to read property "id" on null in /home/primahou/public_html/prima_host_v2/install_marketplace_v4.php on line 358

@@ -1,0 +1,180 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container py-3">
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-header bg-success text-white">
+            ✅ Pesanan Berhasil Dibuat
+        </div>
+
+        <div class="card-body">
+
+            <p><b>Invoice :</b><br>
+                {{ $order->invoice }}
+            </p>
+
+            <p><b>Nama :</b><br>
+                {{ $order->customer_name }}
+            </p>
+
+            <p><b>WhatsApp :</b><br>
+                {{ $order->phone }}
+            </p>
+
+            <p><b>Alamat :</b><br>
+                {{ $order->address }}
+            </p>
+
+            <p><b>Metode Pembayaran :</b><br>
+                {{ $order->payment_method }}
+            </p>
+
+            <p>
+                <b>Status :</b><br>
+
+                @if($order->status=='pending')
+                    <span class="badge bg-warning">
+                        Menunggu Pembayaran
+                    </span>
+                @elseif($order->status=='menunggu_verifikasi')
+                    <span class="badge bg-info">
+                        Menunggu Verifikasi
+                    </span>
+                @elseif($order->status=='diproses')
+                    <span class="badge bg-primary">
+                        Diproses
+                    </span>
+                @elseif($order->status=='dikirim')
+                    <span class="badge bg-success">
+                        Dikirim
+                    </span>
+                @elseif($order->status=='selesai')
+                    <span class="badge bg-dark">
+                        Selesai
+                    </span>
+                @endif
+            </p>
+
+            <hr>
+
+            <h4>
+                Rp {{ number_format($order->total,0,',','.') }}
+            </h4>
+
+        </div>
+    </div>
+
+    <div class="card mb-3">
+
+        <div class="card-header">
+            Detail Produk
+        </div>
+
+        <div class="card-body">
+
+            <table class="table">
+
+                <tr>
+                    <th>Produk</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                </tr>
+
+                @foreach($order->items as $item)
+
+                <tr>
+                    <td>{{ $item->product_name }}</td>
+                    <td>{{ $item->qty }}</td>
+                    <td>
+                        Rp {{ number_format($item->subtotal,0,',','.') }}
+                    </td>
+                </tr>
+
+                @endforeach
+
+            </table>
+
+        </div>
+    </div>
+
+    @if($order->payment_status=='pending')
+
+    <div class="card">
+
+        <div class="card-header bg-warning">
+            Upload Bukti Transfer
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST"
+                action="{{ route('upload.bukti',$order->id) }}"
+                enctype="multipart/form-data">
+
+                @csrf
+
+                <div class="mb-3">
+                    <label>Nama Pengirim</label>
+                    <input type="text"
+                        name="sender_name"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Bank Pengirim</label>
+                    <input type="text"
+                        name="bank"
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Bukti Transfer</label>
+                    <input type="file"
+                        name="bukti_transfer"
+                        class="form-control"
+                        required>
+                </div>
+
+                <button class="btn btn-success w-100">
+                    Kirim Bukti Transfer
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    @endi
+
+@if($order->resi)
+
+<div class="card mt-3">
+
+<div class="card-body">
+
+<h5>Informasi Pengiriman</h5>
+
+<p>
+<b>Kurir :</b>
+{{ $order->kurir }}
+</p>
+
+<p>
+<b>Resi :</b>
+{{ $order->resi }}
+</p>
+
+</div>
+
+</div>
+
+@endif
+
+</div>
+
+@endsection

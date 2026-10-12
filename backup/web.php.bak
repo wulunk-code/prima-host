@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
+Route::get('/', fn() => view('dashboard'));
+
+Route::get('/produk', [ProductController::class,'index']);
+Route::get('/produk/tambah', [ProductController::class,'create']);
+Route::post('/produk/simpan', [ProductController::class,'store']);
+
+Route::get('/produk/edit/{id}', [ProductController::class,'edit']);
+Route::post('/produk/update/{id}', [ProductController::class,'update']);
+
+Route::get('/produk/hapus/{id}', [ProductController::class,'destroy']);
+
+Route::get('/promo', fn() => view('promo'));
+Route::get('/event', fn() => view('event'));
+Route::get('/member', fn() => view('member'));
+Route::get('/reseller', fn() => view('reseller'));
+Route::get('/pesanan', fn() => view('pesanan'));

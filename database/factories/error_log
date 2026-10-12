@@ -1,0 +1,8 @@
+[21-Sep-2026 20:15:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Factory" not found in /home/primahou/public_html/prima_host_v2/database/factories/UserFactory.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/database/factories/UserFactory.php on line 13
+[21-Sep-2026 20:15:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Factory" not found in /home/primahou/public_html/prima_host_v2/database/factories/UserFactory.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/database/factories/UserFactory.php on line 13

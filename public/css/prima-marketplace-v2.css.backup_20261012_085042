@@ -1,0 +1,470 @@
+
+/* ====================================
+   PRIMA HOUSE MARKETPLACE V2
+==================================== */
+
+:root {
+    --prima-green:#00b140;
+    --prima-dark:#008d35;
+    --prima-orange:#ff6600;
+    --prima-bg:#f5f7f6;
+}
+
+/* GLOBAL */
+
+body {
+    background:var(--prima-bg);
+    padding-bottom:85px;
+}
+
+.container {
+    max-width:1200px;
+    margin:auto;
+    padding:12px;
+}
+
+/* HEADER */
+
+.navbar {
+    background:linear-gradient(
+        135deg,
+        #00b140,
+        #00d757
+    );
+
+    padding:12px;
+    box-shadow:0 5px 20px rgba(0,177,64,.2);
+}
+
+.header-row {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-mini img {
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:white;
+    padding:4px;
+}
+
+.logo-name {
+    font-size:17px;
+    font-weight:800;
+}
+
+.logo-tagline {
+    font-size:11px;
+}
+
+.search-box {
+    background:white;
+    border-radius:40px;
+    padding:12px 16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    min-width:0;
+}
+
+.search-box input {
+    font-size:14px;
+    background:transparent;
+}
+
+/* RUNNING TEXT */
+
+.welcome-text {
+    height:48px;
+    border-radius:30px;
+    background:linear-gradient(
+        135deg,
+        #00a83c,
+        #00d757
+    );
+    box-shadow:0 5px 15px rgba(0,177,64,.2);
+}
+
+.speaker-icon {
+    background:rgba(255,255,255,.2);
+}
+
+/* BANNER */
+
+.slider-wrapper {
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.slide img {
+    width:100%;
+    height:auto;
+    aspect-ratio:2.8/1;
+    object-fit:cover;
+}
+
+/* STATISTIK */
+
+.stats-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+}
+
+.stat-box {
+    background:white;
+    border-radius:18px;
+    padding:16px 8px;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.stat-box h3 {
+    font-size:24px;
+    color:var(--prima-green);
+}
+
+.stat-box span {
+    font-size:12px;
+}
+
+/* KATEGORI */
+
+.menu-grid {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+}
+
+.menu-item {
+    background:white;
+    border-radius:18px;
+    padding:18px 8px;
+    text-decoration:none;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+    transition:.2s;
+}
+
+.menu-item i {
+    font-size:27px;
+    color:var(--prima-green);
+}
+
+.menu-item span {
+    font-size:12px;
+    margin-top:6px;
+}
+
+.menu-item:hover {
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+
+.section-title {
+    font-size:21px;
+    font-weight:800;
+    color:var(--prima-green);
+    border-left:5px solid var(--prima-green);
+    padding-left:10px;
+    margin:24px 0 14px;
+}
+
+/* EVENT */
+
+.event-card {
+    background:white;
+    border-left:5px solid var(--prima-green);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:10px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+/* PRODUCT GRID */
+
+.product-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.product-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    width:100%;
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    background:#f4f4f4;
+}
+
+/* PRODUCT BODY */
+
+.product-body {
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-width:0;
+}
+
+.product-name {
+    font-size:14px;
+    font-weight:600;
+    line-height:1.4;
+    min-height:40px;
+    overflow-wrap:anywhere;
+}
+
+.product-price {
+    color:var(--prima-orange);
+    font-size:22px;
+    font-weight:800;
+    margin-top:8px;
+}
+
+.product-stock {
+    color:#777;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* BUTTON */
+
+.btn-detail {
+    display:block;
+    width:100%;
+    margin-top:auto;
+    padding:12px 8px;
+    border-radius:12px;
+    background:linear-gradient(
+        135deg,
+        #00b140,
+        #00d757
+    );
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.product-body .btn-detail,
+.product-body .btn-disabled {
+    margin-top:auto;
+}
+
+.btn-disabled {
+    background:#ccc;
+    color:#555;
+    border-radius:12px;
+    padding:12px;
+}
+
+/* BADGES */
+
+.badge-new,
+.badge-favorite,
+.sold-out {
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:5;
+    border-radius:20px;
+    padding:5px 9px;
+    color:white;
+    font-size:10px;
+    font-weight:bold;
+    background:#ff6600;
+}
+
+.sold-out {
+    background:#555;
+}
+
+/* FLOATING WHATSAPP */
+
+.wa-float {
+    position:fixed;
+    width:52px;
+    height:52px;
+    right:15px;
+    bottom:85px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    z-index:998;
+    box-shadow:0 6px 20px rgba(37,211,102,.3);
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:68px;
+    padding:8px 0;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -4px 20px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.bottom-nav a {
+    color:#666;
+    font-size:11px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+}
+
+.bottom-nav a:first-child {
+    color:var(--prima-green);
+}
+
+.bottom-nav i {
+    font-size:21px;
+}
+
+/* FOOTER */
+
+.footer {
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-top:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    .container {
+        padding:10px;
+    }
+
+    .header-row {
+        gap:8px;
+    }
+
+    .logo-mini img {
+        width:38px;
+        height:38px;
+    }
+
+    .logo-name {
+        font-size:12px;
+    }
+
+    .logo-tagline {
+        font-size:9px;
+    }
+
+    .search-box {
+        padding:9px 12px;
+    }
+
+    .search-box input {
+        font-size:12px;
+    }
+
+    .slide img {
+        height:auto;
+        aspect-ratio:2.8/1;
+        object-fit:cover;
+    }
+
+    .product-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .product-image {
+        height:auto;
+        aspect-ratio:1/1;
+    }
+
+    .product-body {
+        padding:10px;
+    }
+
+    .product-name {
+        font-size:13px;
+    }
+
+    .product-price {
+        font-size:18px;
+    }
+
+    .btn-detail {
+        font-size:12px;
+        padding:11px 5px;
+    }
+
+    .section-title {
+        font-size:18px;
+    }
+
+    .menu-item {
+        padding:14px 5px;
+    }
+
+    .menu-item i {
+        font-size:23px;
+    }
+
+    .menu-item span {
+        font-size:11px;
+    }
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width:360px) {
+
+    .product-grid {
+        gap:8px;
+    }
+
+    .product-price {
+        font-size:16px;
+    }
+
+    .logo-tagline {
+        display:none;
+    }
+
+}
+

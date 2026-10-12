@@ -1,0 +1,24 @@
+[21-Sep-2026 20:14:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/primahou/public_html/prima_host_v2/routes/api.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/api.php on line 6
+[21-Sep-2026 20:14:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/primahou/public_html/prima_host_v2/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/console.php on line 6
+[21-Sep-2026 20:14:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/primahou/public_html/prima_host_v2/routes/web.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/web.php on line 5
+[21-Sep-2026 20:15:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/primahou/public_html/prima_host_v2/routes/api.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/api.php on line 6
+[21-Sep-2026 20:15:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/primahou/public_html/prima_host_v2/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/console.php on line 6
+[21-Sep-2026 20:15:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/primahou/public_html/prima_host_v2/routes/web.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/primahou/public_html/prima_host_v2/routes/web.php on line 5
